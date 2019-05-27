@@ -1,0 +1,26 @@
+<h1>One way data binding
+    <h2>String interpolation</h2>
+    <p>
+        {{demoData}}
+    </p>
+    <p>
+        {{129 * 182}}
+    </p>
+
+    <h2>Property binding</h2>
+    <p>
+        <input type="text" value="{{demoData}}" />
+    </p>
+    <p>
+        <!-- to keep the datatype of the variable -->
+        <input type="text" [value]="demoData" />
+    </p>
+
+    <h1>Event binding</h1>
+    <button (click)="showAlert()">Please click me!</button>
+
+    <h1>Two way data binding</h1>
+    <p>
+        <input type="text" [(ngModel)]="demoData" />
+    </p>
+</h1>

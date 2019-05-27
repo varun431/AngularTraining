@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hello-world';
+  currentCurrency = 'EUR';
+
+  getCode(code) {
+    console.log('in app', code);
+    this.currentCurrency = code;
+  }
 }

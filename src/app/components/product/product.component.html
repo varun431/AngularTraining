@@ -1,0 +1,11 @@
+<div>
+    <img [src]="pData.productImage" width=100 height=100/>
+    <h3> {{ pData.productName | uppercase }} </h3>
+    <h4> {{ pData.productPrice | conversion: cCur | currency: cCur: 'symbol': '2.1' }} </h4>
+    <button *ngIf="pData.productStock; else noStock"> 
+        Add to Cart
+    </button>
+    <ng-template #noStock>
+        Out of stock
+    </ng-template>
+</div>
