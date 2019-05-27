@@ -12,25 +12,25 @@ import { ConversionPipe } from './pipes/conversion.pipe';
 import { ImgFallbackDirective } from './directives/img-fallback.directive';
 
 @NgModule({
-  declarations: [
-    // Register component, directive, and pipe
-    AppComponent,
-    DemlComponent,
-    ProductComponent,
-    ProductListComponent,
-    CurrencyComponent,
-    ConversionPipe,
-    ImgFallbackDirective
-  ],
-  imports: [
-    // Register dependency modules
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
-  providers: [
-    // Register services
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        // Register component, directive, and pipe
+        AppComponent,
+        DemlComponent,
+        ProductComponent,
+        ProductListComponent,
+        CurrencyComponent,
+        ConversionPipe,
+        ImgFallbackDirective
+    ],
+    imports: [
+        // Register dependency modules
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule
+    ],
+    providers: [
+        // Register services
+    ],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-deml',
-  templateUrl: './deml.component.html',
-  styleUrls: ['./deml.component.css']
+    selector: 'app-deml',
+    templateUrl: './deml.component.html',
+    styleUrls: ['./deml.component.css']
 })
 export class DemlComponent implements OnInit {
-  demoData: string = 'Demo component';
+    demoData: string = 'Demo component';
 
-  constructor() { }
+    constructor() {}
 
-  ngOnInit() {
-  }
+    ngOnInit() {}
 
-  showAlert() {
-    alert('hello from angular');
-  }
+    showAlert() {
+        alert('hello from angular');
+    }
 }

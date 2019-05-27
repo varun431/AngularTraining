@@ -1,11 +1,11 @@
 <select (change)="sendCode($event.target.value)">
-  <option *ngFor="let c of currencies">
-    {{c}}
-  </option>
+    <option *ngFor="let c of currencies">
+        {{c}}
+    </option>
 </select>
 
 <select (change)="sendCode(curr.value)" #curr>
     <option *ngFor="let c of currencies">
-      {{c}}
+        {{c}}
     </option>
-  </select>
+</select>
