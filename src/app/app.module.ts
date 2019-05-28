@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +10,9 @@ import { ProductListComponent } from './containers/product-list/product-list.com
 import { CurrencyComponent } from './containers/currency/currency.component';
 import { ConversionPipe } from './pipes/conversion.pipe';
 import { ImgFallbackDirective } from './directives/img-fallback.directive';
+import { TemplateDrivenComponent } from './forms/template-driven/template-driven.component';
+import { ModelDrivenComponent } from './forms/model-driven/model-driven.component';
+import { ZipCodeDirective } from './directives/zip-code.directive';
 
 @NgModule({
     declarations: [
@@ -20,13 +23,17 @@ import { ImgFallbackDirective } from './directives/img-fallback.directive';
         ProductListComponent,
         CurrencyComponent,
         ConversionPipe,
-        ImgFallbackDirective
+        ImgFallbackDirective,
+        TemplateDrivenComponent,
+        ModelDrivenComponent,
+        ZipCodeDirective
     ],
     imports: [
         // Register dependency modules
         BrowserModule,
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ],
     providers: [
         // Register services

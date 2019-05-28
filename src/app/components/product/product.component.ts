@@ -9,6 +9,7 @@ import { Product } from 'src/app/models/product';
 export class ProductComponent implements OnInit {
     @Input() pData: Product[] = null;
     @Input() cCur = 'EUR';
+    // fallbackImage = 'assets/asus_alt.jpg';
 
     constructor() {}
 

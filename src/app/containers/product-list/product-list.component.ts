@@ -10,17 +10,19 @@ export class ProductListComponent implements OnInit {
     pList: Product[] = [
         {
             productId: 1000,
-            productImage: 'assets/asus.jpg',
+            productImage: 'assets/asuas.jpg',
             productName: 'Product 1',
             productPrice: 12000,
-            productStock: true
+            productStock: true,
+            productAltImage: 'assets/asus_alt.jpg'
         },
         {
             productId: 1200,
             productImage: 'assets/asus.jpg',
             productName: 'Product 1',
             productPrice: 5000,
-            productStock: false
+            productStock: false,
+            productAltImage: 'assets/asus_alt.jpg'
         }
     ];
 

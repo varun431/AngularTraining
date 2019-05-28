@@ -13,7 +13,7 @@ export class CurrencyComponent implements OnInit {
 
     ngOnInit() {}
 
-    sendCode(code) {
+    sendCode(code: any) {
         console.log(code);
         this.selectedCode.emit({ data: code });
     }

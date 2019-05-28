@@ -1,0 +1,31 @@
+<button type="button" (click)="loadData(userForm)">Load Data</button>
+<button type="button" (click)="patchData(userForm)">Patch Data</button>
+<form (ngSubmit)="saveData(userForm)" #userForm="ngForm">
+    <label>Name</label>&nbsp;
+    <input type="text" name="name" ngModel required minlength="5" #uname="ngModel" />&nbsp;&nbsp;
+    <div *ngIf="uname.touched">
+        <span *ngIf="uname.hasError('required')">Name is required</span>
+        <span *ngIf="uname.hasError('minlength')">Minimum length is 5</span>
+    </div>
+
+    <label>Age</label>&nbsp;
+    <input type="text" name="age" ngModel required />
+
+    <br />
+    <br />
+
+    <div ngModelGroup="address">
+        <label>City</label>
+        <input type="text" name="city" ngModel required />
+        <label>Pincode</label>
+        <input type="type" name="pincode" #pincode="ngModel" ngModel required appZipCode />
+        <span *ngIf="pincode.hasError('zipCode')">Allowed pincodes are {{pincode.getError('zipCode').allowed}}</span>
+    </div>
+
+    <button>Submit</button>
+</form>
+
+<!-- For testing -->
+<pre>
+{{ userForm.value | json }}
+</pre>

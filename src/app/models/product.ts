@@ -4,4 +4,5 @@ export class Product {
     productImage: string;
     productPrice: number;
     productStock: boolean;
+    productAltImage: string;
 }

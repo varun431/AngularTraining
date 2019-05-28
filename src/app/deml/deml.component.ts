@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./deml.component.css']
 })
 export class DemlComponent implements OnInit {
-    demoData: string = 'Demo component';
+    demoData = 'Demo component';
 
     constructor() {}
 
