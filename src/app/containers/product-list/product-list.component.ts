@@ -1,12 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Product } from 'src/app/models/product';
+import { ProductService } from 'src/app/services/product.service';
+import { CurrencyService } from 'src/app/services/currency.service';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-product-list',
     templateUrl: './product-list.component.html',
-    styleUrls: ['./product-list.component.css']
+    styleUrls: ['./product-list.component.css'],
+    providers: [ProductService]
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, OnDestroy {
     pList: Product[] = [
         {
             productId: 1000,
@@ -25,10 +29,39 @@ export class ProductListComponent implements OnInit {
             productAltImage: 'assets/asus_alt.jpg'
         }
     ];
+    cService$: Subscription; // $ is used to identify that it's an observable variable
+    curCurrency: string;
 
-    @Input() curCurrency = null;
+    constructor(
+        private pService: ProductService,
+        private cService: CurrencyService
+    ) {}
 
-    constructor() {}
+    ngOnInit() {
+        this.getCode();
 
-    ngOnInit() {}
+        this.pService.getProducts().subscribe(
+            data => {
+                this.pList = data as Product[];
+            },
+            err => {
+                console.log('error', err);
+            }
+        );
+    }
+
+    ngOnDestroy() {
+        this.cService$.unsubscribe();
+    }
+
+    getCode() {
+        this.cService$ = this.cService.currencyObservable.subscribe(
+            code => {
+                this.curCurrency = code;
+            },
+            err => {
+                console.log('error', err);
+            }
+        );
+    }
 }

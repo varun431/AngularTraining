@@ -1,0 +1,5 @@
+<ul class="navbar-nav mr-auto">
+    <li class="nav-item" *ngFor="let item of menuItems">
+        <a class="nav-link" [routerLink]="item.menuLink">{{item.menuText}}</a>
+    </li>
+</ul>

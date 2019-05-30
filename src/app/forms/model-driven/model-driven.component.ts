@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { zipCodeValidator } from '../validators';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-model-driven',
@@ -26,7 +27,17 @@ export class ModelDrivenComponent implements OnInit {
         { updateOn: 'submit' }
     );
 
-    constructor() {}
+    constructor(private activeRoute: ActivatedRoute) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.activeRoute.paramMap.subscribe(param => {
+            console.log('name', param.get('name'));
+            this.userForm.patchValue({ name: param.get('name') });
+        });
+
+        this.activeRoute.queryParamMap.subscribe(param => {
+            console.log('age', param.get('age'));
+            this.userForm.patchValue({ age: param.get('age') });
+        });
+    }
 }

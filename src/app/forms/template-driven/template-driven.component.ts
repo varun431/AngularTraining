@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-template-driven',
@@ -7,12 +8,17 @@ import { NgForm } from '@angular/forms';
     styleUrls: ['./template-driven.component.css']
 })
 export class TemplateDrivenComponent implements OnInit {
-    constructor() {}
+    constructor(private router: Router) {}
 
     ngOnInit() {}
 
-    saveData(form: any) {
+    saveData(form: NgForm) {
         console.log(form.status);
+        this.router.navigate(['forms', 'model', form.value.name], {
+            queryParams: {
+                age: form.value.age
+            }
+        });
     }
 
     loadData(formData: NgForm) {

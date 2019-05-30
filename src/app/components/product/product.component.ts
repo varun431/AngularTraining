@@ -7,7 +7,7 @@ import { Product } from 'src/app/models/product';
     styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-    @Input() pData: Product[] = null;
+    @Input() pData: Product = null;
     @Input() cCur = 'EUR';
     // fallbackImage = 'assets/asus_alt.jpg';
 

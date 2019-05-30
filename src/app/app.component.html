@@ -1,7 +1,10 @@
 <!-- <app-deml></app-deml> -->
 <!-- <app-product></app-product> -->
-<!-- <app-currency (selectedCode)="getCode($event.data)"></app-currency>
-<app-product-list [curCurrency]="currentCurrency"></app-product-list> -->
+<app-header>
+    <app-currency (selectedCode)="getCode($event.data)"></app-currency>
+</app-header>
+<router-outlet></router-outlet>
+<!-- <app-product-list [curCurrency]="currentCurrency"></app-product-list> -->
 <!-- <app-template-driven></app-template-driven> -->
 <!-- <app-model-driven></app-model-driven> -->
-<app-template-driven></app-template-driven>
+<!-- <app-template-driven></app-template-driven> -->

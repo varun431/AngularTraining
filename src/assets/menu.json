@@ -1,0 +1,14 @@
+[
+    {
+        "menuText": "Home",
+        "menuLink": "/"
+    },
+    {
+        "menuText": "Products",
+        "menuLink": "/products"
+    },
+    {
+        "menuText": "Forms",
+        "menuLink": "forms"
+    }
+]

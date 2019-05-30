@@ -13,6 +13,9 @@ import { ImgFallbackDirective } from './directives/img-fallback.directive';
 import { TemplateDrivenComponent } from './forms/template-driven/template-driven.component';
 import { ModelDrivenComponent } from './forms/model-driven/model-driven.component';
 import { ZipCodeDirective } from './directives/zip-code.directive';
+import { HttpClientModule } from '@angular/common/http';
+import { UiModule } from './ui/ui.module';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 @NgModule({
     declarations: [
@@ -26,17 +29,20 @@ import { ZipCodeDirective } from './directives/zip-code.directive';
         ImgFallbackDirective,
         TemplateDrivenComponent,
         ModelDrivenComponent,
-        ZipCodeDirective
+        ZipCodeDirective,
+        ErrorPageComponent
     ],
     imports: [
         // Register dependency modules
         BrowserModule,
         AppRoutingModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule,
+        UiModule
     ],
     providers: [
-        // Register services
+        // For singleton class. Global services / data sharing services
     ],
     bootstrap: [AppComponent]
 })
